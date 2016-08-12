@@ -38,7 +38,7 @@ public class Core extends AbstractVerticle {
 		router.get("/employees/clear").handler(this::handleClearEmployees);
 		router.get("/employees/setup").handler(this::handleSetUpInitialData);
 		router.get("/employees/:employeeId").handler(this::handleGetEmployee);
-		router.put("/employees/:employeeId").handler(this::handleAddEmployee);
+		router.post("/employees/:employeeId").handler(this::handleAddEmployee);
 		vertx.createHttpServer().requestHandler(router::accept).listen(LISTENED_PORT);
 	}
 	
@@ -106,7 +106,9 @@ public class Core extends AbstractVerticle {
 	}
 
 	public String getMessage(){
-		return "Hello Body";
+		return "<center>"
+				+ "	<h1 style='color:blue;'>Vertext Example Project</h1>"
+				+ "</center>";
 	}
 
 }
