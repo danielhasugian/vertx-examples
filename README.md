@@ -13,5 +13,6 @@ Import this project and try run with this command
 - mvn package exec:exec@run-app
 or create jar first
 - mvn package
+
 then run with java
 java -jar nameofjar.jar
