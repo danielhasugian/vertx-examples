@@ -106,7 +106,9 @@ public class Core extends AbstractVerticle {
 	}
 
 	public String getMessage(){
-		return "<center><h1 style='color:blue;'>Vertext Example Project</h1></center>";
+		return "<center>"
+				+ "	<h1 style='color:blue;'>Vertext Example Project</h1>"
+				+ "</center>";
 	}
 
 }
