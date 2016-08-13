@@ -1,6 +1,7 @@
 package com.organization.project.controller;
 
 import com.organization.project.service.PostgreSqlService;
+import com.organization.project.type.ContentTypeHeader;
 import com.organization.project.util.Runner;
 
 import io.vertx.core.AbstractVerticle;
@@ -16,7 +17,6 @@ public class Core extends AbstractVerticle {
 
 	private static final int LISTENED_PORT = 88;
 	private static final int MAX_INITIAL_LINE_LENGTH = 16384;
-	private static final String CONTENT_TYPE[] = { "text/html", "application/json" };
 	private Router router;
 	private EmployeController employeController;
 	private UserController userController;
@@ -43,7 +43,7 @@ public class Core extends AbstractVerticle {
 
 		router.route().handler(BodyHandler.create());
 		router.get("/").handler(routingContext -> {
-			routingContext.response().putHeader("content-type", CONTENT_TYPE[0]).end(getMessage());
+			routingContext.response().putHeader("content-type", ContentTypeHeader.TEXTHTML.getMimeType()).end(getMessage());
 		});
 
 		// Setup EmployeController
