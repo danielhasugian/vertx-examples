@@ -12,7 +12,7 @@
 		<junit.version>4.12</junit.version>
 		<cassandra.version>3.0.3</cassandra.version>
 		<netty.version>3.9.0.Final</netty.version>
-		<mysqlPostgre.version>3.3.2</mysqlPostgre.version>
+		<postgresql.version>9.0-801.jdbc4</postgresql.version>
 		<exec.mainClass>com.organization.project.controller.Core</exec.mainClass>
 	</properties>
 
@@ -77,6 +77,17 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-jdbc-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-unit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
@@ -88,11 +99,11 @@
 			<artifactId>cassandra-driver-core</artifactId>
 			<version>${cassandra.version}</version>
 		</dependency>
-		
+
 		<dependency>
-		  <groupId>io.vertx</groupId>
-		  <artifactId>vertx-mysql-postgresql-client</artifactId>
-		  <version>${mysqlPostgre.version}</version>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
 		</dependency>
 
 		<dependency>
